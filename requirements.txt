@@ -10,3 +10,4 @@ faiss-cpu
 gspread
 pytz 
 airtable-python-wrapper
+tabulate
