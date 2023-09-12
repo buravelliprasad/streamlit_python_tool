@@ -98,7 +98,7 @@ AIRTABLE_BASE_ID = "apphcpoXpCsorEcNx"
 AIRTABLE_TABLE_NAME = "Question_Answer_Data" 
 
 # Streamlit UI setup
-st.info(" We're developing cutting-edge conversational AI solutions tailored for automotive retail, aiming to provide advanced products and support. As part of our progress, we're establishing a environment to check offerings and also check Our website [engane.ai](https://funnelai.com/). This test application answers about Inventry, Business details, Financing and Discounts and Offers related questions. [here](https://github.com/buravelliprasad/streamlit/blob/main/dealer_1_inventry.csv) is a inventry dataset explore and play with the data. Appointment dataset [here](https://github.com/buravelliprasad/streamlit_dynamic_retrieval/blob/main/appointment.csv)")
+st.info(" We're developing cutting-edge conversational AI solutions tailored for automotive retail, aiming to provide advanced products and support. As part of our progress, we're establishing a environment to check offerings and also check Our website [engane.ai](https://funnelai.com/). This test application answers about Inventory, Business details, Financing and Discounts and Offers related questions. [here](https://github.com/buravelliprasad/streamlit_python_tool/blob/main/dealer_1_inventry.csv) is a inventry dataset to explore. Appointment dataset [here](https://github.com/buravelliprasad/streamlit_python_tool/blob/main/appointment_new.csv)
 # Initialize session state
 if 'chat_history' not in st.session_state:
     st.session_state.chat_history = []
