@@ -1,0 +1,12 @@
+langchain
+openai
+streamlit
+tiktoken
+pandas
+tabulate
+streamlit_chat
+chromadb 
+faiss-cpu
+gspread
+pytz 
+airtable-python-wrapper
