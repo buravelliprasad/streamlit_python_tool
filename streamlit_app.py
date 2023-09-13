@@ -98,7 +98,7 @@ tool3 = create_retriever_tool(
 airtable_api_key = st.secrets["AIRTABLE"]["AIRTABLE_API_KEY"]
 os.environ["AIRTABLE_API_KEY"] = airtable_api_key
 AIRTABLE_BASE_ID = "apphcpoXpCsorEcNx"  
-AIRTABLE_TABLE_NAME = "costum_agent_feedback"
+AIRTABLE_TABLE_NAME = "python_tool_Q&A"
 
 # Streamlit UI setup
 st.info(" We're developing cutting-edge conversational AI solutions tailored for automotive retail, aiming to provide advanced products and support. As part of our progress, we're establishing a environment to check offerings and also check Our website [engane.ai](https://funnelai.com/). This test application answers about Inventory, Business details, Financing and Discounts and Offers related questions. [here](https://github.com/buravelliprasad/streamlit_python_tool/blob/main/dealer_1_inventry.csv) is a inventry dataset to explore. Appointment dataset [here](https://github.com/buravelliprasad/streamlit_python_tool/blob/main/appointment_new.csv)")
