@@ -97,7 +97,7 @@ tool3 = create_retriever_tool(
 # airtable
 airtable_api_key = st.secrets["AIRTABLE"]["AIRTABLE_API_KEY"]
 os.environ["AIRTABLE_API_KEY"] = airtable_api_key
-AIRTABLE_BASE_ID = "apphcpoXpCsorEcNx"  
+AIRTABLE_BASE_ID = "appN324U6FsVFVmx2"  
 AIRTABLE_TABLE_NAME = "python_tool_Q&A"
 
 # Streamlit UI setup
