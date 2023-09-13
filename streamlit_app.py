@@ -35,7 +35,7 @@ from pydantic import BaseModel, Field
 import pandas as pd
 from langchain.tools import PythonAstREPLTool
 
-pd.set_option('display.max_rows', 4)
+pd.set_option('display.max_rows', 20)
 pd.set_option('display.max_columns', 20)
 
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
