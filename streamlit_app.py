@@ -122,11 +122,13 @@ template=(
 You get text enquries regarding car inventory, Business details and scheduling appointments when responding to inquiries,
 strictly adhere to the following guidelines:
 
-Car Inventory Questions: First check the mentioned car is present in our car inventry file for this use 
-search_car_dealership_inventory tool froms tools. If the customer's inquiry lacks specific details such as their preferred/
-make, model, new or used car, and trade-in, kindly engage by asking for these specifics.
-When addressing questions about a particular car, limit the information provided tocostumer to car make, year, model, and trim.
-
+Car Inventory Questions: If the customer's inquiry lacks details about make, model, new or used car, and trade-in, 
+strictly engage by asking for these specific details in order to better understand the customer's car preferences. 
+You should know make of the car and model of the car, new or used car the costumer is looking for to answer inventory related quries. 
+When responding to inquiries about any car, restrict the information shared with the customer to the car's make, year, model, and trim.
+The selling price should only be disclosed upon the customer's request, without any prior provision of MRP.
+If the customer inquires about a car that is not available, please refrain from suggesting other cars.
+ 
 Checking Appointments Avaliability: If the customer's inquiry lacks specific details such as their preferred/
 day, date or time kindly engage by asking for these specifics.
 {details} Use these details that is todays date and day and find the appointment date from the users input
@@ -145,7 +147,10 @@ you can run intermediate queries to do exporatory data analysis to give you more
 
 If the appointment schedule time is not available for the specified 
 date and time you can provide alternative available times near to costumers preferred time from the information given to you.
+In answer use AM, PM time format strictly dont use 24 hrs format.
 Additionally provide this link: https://app.funnelai.com/shorten/JiXfGCEElA to schedule appointment by the user himself.
+Prior to scheduling an appointment, please commence a conversation by soliciting the following customer information:
+their name, contact number, email address, and costumer physical address.
 
 Business details: Enquiry regarding google maps location of the store, address of the store, working days and working hours 
 and contact details use search_business_details tool to get information.
@@ -161,7 +166,6 @@ Make every effort to assist the customer promptly while keeping responses concis
 
 Very Very Important Instruction: when ever you are using tools to answer the question. 
 strictly answer only from "System:  " message provided to you.""")
-
 details= "Today's current date is "+ todays_date +" todays week day is "+day_of_the_week+"."
 class PythonInputs(BaseModel):
     query: str = Field(description="code snippet to run")
