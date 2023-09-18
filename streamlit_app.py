@@ -75,13 +75,15 @@ docs_1 = loader.load()
 embeddings = OpenAIEmbeddings()
 vectorstore_1 = FAISS.from_documents(docs_1, embeddings)
 retriever_1 = vectorstore_1.as_retriever(search_type="similarity", search_kwargs={"k": 3})#check without similarity search and k=8
-# retriever_1 = vectorstore_1.as_retriever(search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.75,"k": 3})
+# retriever_1 = vectorstore_1.as_retriever(search_type="similarity_score_threshold", search_kwargs={"score_threshold": 0.65,"k": 3})
 
 # Create the first tool
 tool1 = create_retriever_tool(
     retriever_1, 
      "search_car_dealership_inventory",
-     "Searches and returns documents regarding the car inventory and Input should be a single string strictly."
+     "This tool is used when answering questions related to car inventory.\
+      Searches and returns documents regarding the car inventory. Input to this can be multi string.\
+      The primary input for this function consists of either the car's make and model, whether it's new or used."
 )
 
 
@@ -150,7 +152,7 @@ date and time you can provide alternative available times near to costumers pref
 In answer use AM, PM time format strictly dont use 24 hrs format.
 Additionally provide this link: https://app.funnelai.com/shorten/JiXfGCEElA to schedule appointment by the user himself.
 Prior to scheduling an appointment, please commence a conversation by soliciting the following customer information:
-their name, contact number, email address, and costumer physical address.
+their name, contact number and email address.
 
 Business details: Enquiry regarding google maps location of the store, address of the store, working days and working hours 
 and contact details use search_business_details tool to get information.
