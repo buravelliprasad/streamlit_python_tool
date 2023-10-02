@@ -172,7 +172,7 @@ Very Very Important Instruction: when ever you are using tools to answer the que
 strictly answer only from "System:  " message provided to you.""")
 details= "Today's current date is "+ todays_date +" todays week day is "+day_of_the_week+"."
 
-df = pd.read_csv("appointment_new.csv")
+# df = pd.read_csv("appointment_new.csv")
 class PythonInputs(BaseModel):
     query: str = Field(description="code snippet to run")
 # if __name__ == "__main__":
