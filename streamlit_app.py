@@ -31,7 +31,8 @@ from langchain.schema.messages import SystemMessage
 from langchain.prompts import MessagesPlaceholder
 from langchain.agents import AgentExecutor
 from langchain.smith import RunEvalConfig, run_on_dataset
-from pydantic import BaseModel, Field
+# from pydantic import BaseModel, Field
+from pydantic import BaseModel
 import pandas as pd
 from langchain.tools import PythonAstREPLTool
 
