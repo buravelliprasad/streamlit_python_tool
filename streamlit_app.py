@@ -184,8 +184,8 @@ class PythonInputs(BaseModel):
     # Create an instance of PythonInputs
     python_inputs = PythonInputs(query="Your code snippet here")
 
-    # Pass python_inputs as args_schema
- repl = PythonAstREPLTool(
+# Pass python_inputs as args_schema
+repl = PythonAstREPLTool(
         locals={"df": df},
         name="python_repl",
         description="Use to check available appointment times for a given date and time...",
