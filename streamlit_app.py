@@ -37,8 +37,6 @@ from langchain.tools import PythonAstREPLTool
 
 pd.set_option('display.max_rows', 20)
 pd.set_option('display.max_columns', 20)
-df = pd.read_csv("appointment_new.csv")
-input_templete = template.format(dhead=df.iloc[:3, :5].to_markdown(),details=details)
 
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 st.image("socialai.jpg")
@@ -173,13 +171,14 @@ Make every effort to assist the customer promptly while keeping responses concis
 Very Very Important Instruction: when ever you are using tools to answer the question. 
 strictly answer only from "System:  " message provided to you.""")
 details= "Today's current date is "+ todays_date +" todays week day is "+day_of_the_week+"."
-
+df = pd.read_csv("appointment_new.csv")
+input_templete = template.format(dhead=df.iloc[:3, :5].to_markdown(),details=details)
 # df = pd.read_csv("appointment_new.csv")
 class PythonInputs(BaseModel):
     query: str = Field(description="code snippet to run")
 # if __name__ == "__main__":
 # df = pd.read_csv("appointment_new.csv")
-input_templete = template.format(dhead=df.head().to_markdown(),details=details)
+# input_templete = template.format(dhead=df.head().to_markdown(),details=details)
 
 
 system_message = SystemMessage(
