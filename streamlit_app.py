@@ -240,8 +240,20 @@ with container:
 
     with response_container:
         for i, (query, answer) in enumerate(st.session_state.chat_history):
+            user_name = st.session_state.user_name
             message(query, is_user=True, key=f"{i}_user", avatar_style="big-smile")
-            message(answer, key=f"{i}_answer", avatar_style="thumbs")
+            col1, col2 = st.columns([0.7, 10]) 
+            with col1:
+                st.image("icon-1024.png", width=50)
+            with col2:
+                st.markdown(
+                f'<div style="background-color: #F5F5F5; border-radius: 10px; padding: 10px; width: 50%;'
+                f' border-top-right-radius: 10px; border-bottom-right-radius: 10px;'
+                f' border-top-left-radius: 0; border-bottom-left-radius: 0; box-shadow: 2px 2px 5px #888888;">'
+                f'<span style="font-family: Arial, sans-serif; font-size: 16px; white-space: pre-wrap;">{answer}</span>'
+                f'</div>',
+                unsafe_allow_html=True
+                )
 
         if st.session_state.user_name:
             try:
