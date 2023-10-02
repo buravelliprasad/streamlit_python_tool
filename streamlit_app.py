@@ -170,8 +170,15 @@ if __name__ == "__main__":
     # Load your data (assuming "appointment_new.csv" is in the same directory)
     df = pd.read_csv("appointment_new.csv")
 
-    # Define your input template and other details (assuming these are defined elsewhere in your code)
-    input_template = template.format(dhead=df.head().to_markdown(), details=details)
+
+#     # Define your input template and other details (assuming these are defined elsewhere in your code)
+#     input_template = template.format(dhead=df.head().to_markdown(), details=details)
+
+# class PythonInputs(BaseModel):
+#     query: str = Field(description="code snippet to run")
+# if __name__ == "__main__":
+#     df = pd.read_csv("appointment_new.csv")
+    input_templete = template.format(dhead=df.iloc[:3, :5].to_markdown(),details=details)
 system_message = SystemMessage(
         content=input_templete)
 
