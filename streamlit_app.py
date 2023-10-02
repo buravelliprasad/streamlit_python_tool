@@ -173,8 +173,8 @@ strictly answer only from "System:  " message provided to you.""")
 details= "Today's current date is "+ todays_date +" todays week day is "+day_of_the_week+"."
 class PythonInputs(BaseModel):
     query: str = Field(description="code snippet to run")
-if __name__ == "__main__":
-    df = pd.read_csv("appointment_new.csv")
+# if __name__ == "__main__":
+#     df = pd.read_csv("appointment_new.csv")
     input_templete = template.format(dhead=df.head().to_markdown(),details=details)
 
 
