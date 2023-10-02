@@ -170,7 +170,12 @@ if __name__ == "__main__":
     # Load your data (assuming "appointment_new.csv" is in the same directory)
     df = pd.read_csv("appointment_new.csv")
     input_templete = template.format(dhead=df.iloc[:3, :5].to_markdown(),details=details)
-    repl = PythonAstREPLTool(
+    prompt = OpenAIFunctionsAgent.create_prompt(
+        system_message=system_message,
+        extra_prompt_messages=[MessagesPlaceholder(variable_name=memory_key)]
+    )
+
+repl = PythonAstREPLTool(
         locals={"df": df},
         name="python_repl",
         description="Use to check available appointment times for a given date and time. The input to this tool should be a string in this format mm/dd/yy. This is the only way for you to answer questions about available appointments. This tool will reply with available times for the specified date in 24-hour time, for example: 15:00 and 3 pm are the same.",
@@ -185,10 +190,10 @@ tools = [tool1,repl,tool3]
 # if __name__ == "__main__":
 #     df = pd.read_csv("appointment_new.csv")
     
-prompt = OpenAIFunctionsAgent.create_prompt(
-        system_message=system_message,
-        extra_prompt_messages=[MessagesPlaceholder(variable_name=memory_key)]
-    )
+# prompt = OpenAIFunctionsAgent.create_prompt(
+#         system_message=system_message,
+#         extra_prompt_messages=[MessagesPlaceholder(variable_name=memory_key)]
+#     )
 
     # Initialize the PythonAstREPLTool with the input schema
 
