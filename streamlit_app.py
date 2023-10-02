@@ -37,6 +37,8 @@ from langchain.tools import PythonAstREPLTool
 
 pd.set_option('display.max_rows', 20)
 pd.set_option('display.max_columns', 20)
+df = pd.read_csv("appointment_new.csv")
+input_templete = template.format(dhead=df.iloc[:3, :5].to_markdown(),details=details)
 
 os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
 st.image("socialai.jpg")
@@ -177,8 +179,6 @@ class PythonInputs(BaseModel):
     query: str = Field(description="code snippet to run")
 # if __name__ == "__main__":
 # df = pd.read_csv("appointment_new.csv")
-
-
 input_templete = template.format(dhead=df.head().to_markdown(),details=details)
 
 
