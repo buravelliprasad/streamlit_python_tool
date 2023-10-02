@@ -175,7 +175,7 @@ class PythonInputs(BaseModel):
     query: str = Field(description="code snippet to run")
 # if __name__ == "__main__":
     # df = pd.read_csv("appointment_new.csv")
-    input_templete = template.format(dhead=df.head().to_markdown(),details=details)
+input_templete = template.format(dhead=df.head().to_markdown(),details=details)
 
 
 system_message = SystemMessage(
