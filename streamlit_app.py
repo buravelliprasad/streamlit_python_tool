@@ -168,9 +168,9 @@ import pandas as pd
 class PythonInputs(BaseModel):
     query: str = Field(description="Code snippet to run")
 
-if __name__ == "__main__":
-    # Load your data (assuming "appointment_new.csv" is in the same directory)
-    df = pd.read_csv("appointment_new.csv")
+# if __name__ == "__main__":
+#     # Load your data (assuming "appointment_new.csv" is in the same directory)
+#     df = pd.read_csv("appointment_new.csv")
     input_templete = template.format(dhead=df.iloc[:3, :5].to_markdown(), details=details)
 
     system_message = SystemMessage(
@@ -185,80 +185,14 @@ if __name__ == "__main__":
     python_inputs = PythonInputs(query="Your code snippet here")
 
     # Pass python_inputs as args_schema
-    repl = PythonAstREPLTool(
+ repl = PythonAstREPLTool(
         locals={"df": df},
         name="python_repl",
         description="Use to check available appointment times for a given date and time...",
         args_schema=python_inputs  # Use the instance you created
     )
 
-    tools = [tool1, repl, tool3]
-
-# # Define your input schema
-# class PythonInputs(BaseModel):
-#     query: str = Field(description="Code snippet to run")
-
-# if __name__ == "__main__":
-#     # Load your data (assuming "appointment_new.csv" is in the same directory)
-#     df = pd.read_csv("appointment_new.csv")
-#     input_templete = template.format(dhead=df.iloc[:3, :5].to_markdown(),details=details)
-
-# system_message = SystemMessage(
-#         content=input_templete)
-# prompt = OpenAIFunctionsAgent.create_prompt(
-#         system_message=system_message,
-#         extra_prompt_messages=[MessagesPlaceholder(variable_name=memory_key)]
-#     )
-
-# repl = PythonAstREPLTool(
-#         locals={"df": df},
-#         name="python_repl",
-#         description="Use to check available appointment times for a given date and time. The input to this tool should be a string in this format mm/dd/yy. This is the only way for you to answer questions about available appointments. This tool will reply with available times for the specified date in 24-hour time, for example: 15:00 and 3 pm are the same.",
-#         args_schema=PythonInputs  # Use the input schema you defined
-#     )
-# tools = [tool1,repl,tool3]
-#     # Define your input template and other details (assuming these are defined elsewhere in your code)
-#     input_template = template.format(dhead=df.head().to_markdown(), details=details)
-
-# class PythonInputs(BaseModel):
-#     query: str = Field(description="code snippet to run")
-# if __name__ == "__main__":
-#     df = pd.read_csv("appointment_new.csv")
-    
-# prompt = OpenAIFunctionsAgent.create_prompt(
-#         system_message=system_message,
-#         extra_prompt_messages=[MessagesPlaceholder(variable_name=memory_key)]
-#     )
-
-    # Initialize the PythonAstREPLTool with the input schema
-
-
-    # Define your other tools (tool1 and tool3)
-    # tool1 = ...
-    # tool3 = ...
-
-    # Create a list of tools
-
-
-    # Now you can use the 'tools' list for further processing or interaction.
-# PythonInputs(BaseModel):
-#     query: str = Field(description="code snippet to run")
-# if __name__ == "__main__":
-#     df = pd.read_csv("appointment_new.csv")
-#     input_templete = template.format(dhead=df.head().to_markdown(),details=details)
-
-
-# system_message = SystemMessage(
-#         content=input_templete)
-
-# prompt = OpenAIFunctionsAgent.create_prompt(
-#         system_message=system_message,
-#         extra_prompt_messages=[MessagesPlaceholder(variable_name=memory_key)]
-#     )
-
-# repl = PythonAstREPLTool(locals={"df": df}, name="python_repl",
-#         description="Use to check on available appointment times for a given date and time. The input to this tool should be a string in this format mm/dd/yy. This is the only way for you to answer questions about available appointments. This tool will reply with available times for the specified date in 24hour time, for example: 15:00 and 3pm are the same.",args_schema=PythonInputs)
-# tools = [tool1,repl,tool3]
+tools = [tool1, repl, tool3]
 
 agent = OpenAIFunctionsAgent(llm=llm, tools=tools, prompt=prompt)
 # print("this code block running every time")
