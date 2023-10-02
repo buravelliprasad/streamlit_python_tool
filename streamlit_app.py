@@ -176,7 +176,7 @@ if __name__ == "__main__":
         description="Use to check available appointment times for a given date and time. The input to this tool should be a string in this format mm/dd/yy. This is the only way for you to answer questions about available appointments. This tool will reply with available times for the specified date in 24-hour time, for example: 15:00 and 3 pm are the same.",
         args_schema=PythonInputs  # Use the input schema you defined
     )
-     tools = [tool1,repl,tool3]
+tools = [tool1,repl,tool3]
 #     # Define your input template and other details (assuming these are defined elsewhere in your code)
 #     input_template = template.format(dhead=df.head().to_markdown(), details=details)
 
