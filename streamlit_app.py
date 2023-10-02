@@ -165,7 +165,7 @@ color, and basic features, kindly invite the customer to schedule an appointment
 for a comprehensive product overview by our experts.
 
 Please maintain a courteous and respectful tone in your American English responses./
-If you're unsure of an answer, respond with 'I am sorry.'/
+If you're unsure of an answer, respond with 'I am sorry.'
 Make every effort to assist the customer promptly while keeping responses concise, not exceeding two sentences."
 
 Very Very Important Instruction: when ever you are using tools to answer the question. 
@@ -174,7 +174,7 @@ details= "Today's current date is "+ todays_date +" todays week day is "+day_of_
 class PythonInputs(BaseModel):
     query: str = Field(description="code snippet to run")
 # if __name__ == "__main__":
-#     df = pd.read_csv("appointment_new.csv")
+    df = pd.read_csv("appointment_new.csv")
     input_templete = template.format(dhead=df.head().to_markdown(),details=details)
 
 
