@@ -170,7 +170,7 @@ if __name__ == "__main__":
     # Load your data (assuming "appointment_new.csv" is in the same directory)
     df = pd.read_csv("appointment_new.csv")
     input_templete = template.format(dhead=df.iloc[:3, :5].to_markdown(),details=details)
-    prompt = OpenAIFunctionsAgent.create_prompt(
+prompt = OpenAIFunctionsAgent.create_prompt(
         system_message=system_message,
         extra_prompt_messages=[MessagesPlaceholder(variable_name=memory_key)]
     )
