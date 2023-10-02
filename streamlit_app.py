@@ -35,6 +35,43 @@ from langchain.agents import AgentExecutor
 from langchain.smith import RunEvalConfig, run_on_dataset
 import pandas as pd
 
+hide_share_button_style = """
+    <style>
+    .st-emotion-cache-zq5wmm.ezrtsby0 .stActionButton:nth-child(1) {
+        display: none !important;
+    }
+    </style>
+"""
+
+hide_star_and_github_style = """
+    <style>
+    .st-emotion-cache-1lb4qcp.e3g6aar0,
+    .st-emotion-cache-30do4w.e3g6aar0 {
+        display: none !important;
+    }
+    </style>
+"""
+
+hide_mainmenu_style = """
+    <style>
+    #MainMenu {
+        display: none !important;
+    }
+    </style>
+"""
+
+hide_fork_app_button_style = """
+    <style>
+    .st-emotion-cache-alurl0.e3g6aar0 {
+        display: none !important;
+    }
+    </style>
+"""
+
+st.markdown(hide_share_button_style, unsafe_allow_html=True)
+st.markdown(hide_star_and_github_style, unsafe_allow_html=True)
+st.markdown(hide_mainmenu_style, unsafe_allow_html=True)
+st.markdown(hide_fork_app_button_style, unsafe_allow_html=True)
 pd.set_option('display.max_rows', 20)
 pd.set_option('display.max_columns', 20)
 
