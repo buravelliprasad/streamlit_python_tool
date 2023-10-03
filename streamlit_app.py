@@ -284,7 +284,7 @@ with container:
                 st.image("icon-1024.png", width=50)
             with col2:
                 st.markdown(
-                f'<div style="background-color: white; color: black; border-radius: 10px; padding: 10px; width: 60%;'
+                f'<div style="background-color: black; color: white; border-radius: 10px; padding: 10px; width: 60%;'
                 f' border-top-right-radius: 10px; border-bottom-right-radius: 10px;'
                 f' border-top-left-radius: 0; border-bottom-left-radius: 0; box-shadow: 2px 2px 5px #888888;">'
                 f'<span style="font-family: Arial, sans-serif; font-size: 16px; white-space: pre-wrap;">{answer}</span>'
